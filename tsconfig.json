@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "typeRoots": ["./types"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -16,9 +17,13 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/components/*": ["components/*"],
-      "@/public/*": ["public/*"],
-      "@/styles/*": ["styles/*"]
+      "@app/*": ["app/*"],
+      "@components/*": ["components/*"],
+      "@public/*": ["public/*"],
+      "@pages/*": ["pages/*"],
+      "@styles/*": ["styles/*"],
+      "@lib/*": ["lib/*"],
+      "@hooks/*": ["lib/hooks/*"]
     },
     "plugins": [
       {
@@ -26,6 +31,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "middleware.ts"],
   "exclude": ["node_modules"]
 }

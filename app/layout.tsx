@@ -1,16 +1,13 @@
-import '@/styles/globals.css';
-import { redirect } from 'next/navigation';
-import { cookies } from 'next/headers';
+import Navbar from '@components/Navbar';
+import '@styles/globals.css';
 
-import Navbar from './Navbar';
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const nextCookies = cookies();
-  const theme = nextCookies.get('theme');
-
+export default async function RootLayout({ children }: { children: JSX.Element }) {
   return (
-    <html lang='en'>
-      <body className='bg-gray-900 text-gray-100'>{children}</body>
+    <html lang='en' className='grid h-full'>
+      <body className='bg-gray-900 text-gray-100'>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
